@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: staging
+    description: "Raw NYC taxi trip data (Green & Yellow)"
+    database: taxi_rides_ny
+    schema: prod
+
+    tables:
+      - name: green_tripdata
+        description: "Green taxi trips (2019–2020)"
+        loaded_at_field: lpep_pickup_datetime
+        meta:
+          external_location: >
+            C:/Users/nesto/OneDrive/Documentos/Zoomcamp/DemoAE/taxi_rides_ny/data/green/green_tripdata_20*.parquet
+
+      - name: yellow_tripdata
+        description: "Yellow taxi trips (2019–2020)"
+        loaded_at_field: tpep_pickup_datetime
+        meta:
+          external_location: >
+            C:/Users/nesto/OneDrive/Documentos/Zoomcamp/DemoAE/taxi_rides_ny/data/yellow/yellow_tripdata_20*.parquet
